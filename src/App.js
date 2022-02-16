@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import './estilo.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        }
+        this.quebraBiscoito =  this.quebraBiscoito.bind(this)
+        this.frases = [`Je pense, donc je suis.(René Descartes)`,
+        `Connais-toi toi-même.`,
+       ` L'homme est un pont, non une fin. (Friedrich Nietzsche)`,
+        `La liberté est le droit de faire tout ce que les lois permettent. (Montesquieu)`, 
+        `Rien de grand ne s'est fait dans le monde sans passion(Hegel)`]
+    }
+    quebraBiscoito(){
+
+    }
+    render(){
+        return(
+            <div className="Container">
+              <img src={require('./assets/biscoito.png') } className="img"></img>
+              <Botao nome="Abrir biscoito" acaoBtn={this.quebraBiscoito}/>
+              <h3 className="texto">Frase numero 1 aleatorio</h3>
+            </div>
+        )
+    }
+}
+
+class Botao extends Component{
+    render(){
+        return(
+            <div>
+                <button onClick={this.props.acaoBtn}>{this.props.nome}</button>
+          </div>
+        )
+    }
 }
 
 export default App;
