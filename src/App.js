@@ -7,7 +7,7 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-
+            texto:''
         }
         this.quebraBiscoito =  this.quebraBiscoito.bind(this)
         this.frases = [`Je pense, donc je suis.(René Descartes)`,
@@ -17,6 +17,11 @@ class App extends Component {
         `Rien de grand ne s'est fait dans le monde sans passion(Hegel)`]
     }
     quebraBiscoito(){
+        let state =  this.state;
+        let rand = Math.floor(Math.random() * this.frases.length);
+        state.texto = this.frases[rand];
+
+        this.setState(state)
 
     }
     render(){
@@ -24,7 +29,7 @@ class App extends Component {
             <div className="Container">
               <img src={require('./assets/biscoito.png') } className="img"></img>
               <Botao nome="Abrir biscoito" acaoBtn={this.quebraBiscoito}/>
-              <h3 className="texto">Frase numero 1 aleatorio</h3>
+              <h3 className="texto">{this.state.texto}</h3>
             </div>
         )
     }
