@@ -10,25 +10,23 @@
  height: 300px;
  margin: 25px 0;
 }
-.texto{
-    font-size: 18px ;
-font-style: italic;
-text-align: center;
+.timer{
+    font-size: 80px;
+    margin-top: -250px;
+ 
 
 }
-button{
-    width: 100%;
-    height: 50px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    padding: 30px;
+.areabtn{
+    margin-top: 100px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: .5s;
-    margin: 5px 0 10px 0;
-    font-weight: 700;
+}
+.btn{
+    width: 150px;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    
     
 }
 button:hover{
